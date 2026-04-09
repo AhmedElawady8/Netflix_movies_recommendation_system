@@ -34,23 +34,25 @@ A content-based movie recommendation system that suggests similar movies using M
 | Svelte | Custom image carousel component |
 
 ---
-
 ## 📁 Project Structure
+
+```
 Netflix_movies_recommendation_system/
-├── app.py                        # Main Streamlit app (user interface)
-├── Main.py                       # Builds the ML model and similarity matrix
+├── app.py                        # Main Streamlit app
+├── Main.py                       # Builds the ML model
 ├── movies_list.pkl               # Saved cleaned movie DataFrame
-├── similarity.pkl                # Cosine similarity matrix (model output)
+├── similarity.pkl                # Cosine similarity matrix
 ├── requirements.txt              # Python dependencies
 ├── .gitignore                    # Files Git should ignore
 ├── Data/
-│   └── top10K-TMDB-movies.csv   # Raw TMDB movie dataset (top 10K movies)
+│   └── top10K-TMDB-movies.csv   # Raw TMDB movie dataset
 └── frontend/
-├── public/                   # Compiled Svelte carousel component
-├── src/                      # Carousel source code
-├── package.json              # Node.js dependencies
-├── rollup.config.js          # Svelte bundler config
-└── tsconfig.json             # TypeScript config
+    ├── public/                   # Compiled Svelte carousel
+    ├── src/                      # Carousel source code
+    ├── package.json              # Node.js dependencies
+    ├── rollup.config.js          # Svelte bundler config
+    └── tsconfig.json             # TypeScript config
+```
 ---
 
 ## ⚙️ How It Works
@@ -64,31 +66,6 @@ Netflix_movies_recommendation_system/
 
 ---
 
-## 🚀 How to Run Locally
-
-**1. Clone the repository**
-```bash
-git clone https://github.com/AhmedElawady8/Netflix_movies_recommendation_system.git
-cd Netflix_movies_recommendation_system
-```
-
-**2. Install dependencies**
-```bash
-pip install -r requirements.txt
-```
-
-**3. Generate the model files**
-```bash
-python Main.py
-```
-
-**4. Run the app**
-```bash
-streamlit run app.py
-```
-
----
-
 ## 📊 Dataset
 
 - **Source:** TMDB (The Movie Database)
@@ -96,13 +73,6 @@ streamlit run app.py
 - **Date:** Data up to July 26, 2022
 - **Features used:** id, title, genre, overview
 
----
-
-## 🔑 API Key
-
-This project uses the TMDB API to fetch live movie posters, ratings, genres, and overviews.
-
-[https://www.themoviedb.org/documentation/api](https://www.themoviedb.org/documentation/api)
 
 ---
 
