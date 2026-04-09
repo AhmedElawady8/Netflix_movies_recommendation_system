@@ -140,13 +140,20 @@ def fetch_movie_details(movie_id):
 # ============================================================
 @st.cache_resource
 def load_model():
-    movies     = pickle.load(open("movies_list.pkl", "rb"))
-    similarity = pickle.load(open("similarity.pkl", "rb"))
+    movies = pickle.load(open("movies_list.pkl", "rb"))
+    
+    # Generate similarity matrix if file doesn't exist
+    if not os.path.exists("similarity.pkl"):
+        from sklearn.feature_extraction.text import CountVectorizer
+        from sklearn.metrics.pairwise import cosine_similarity
+        cv = CountVectorizer(max_features=10000, stop_words='english')
+        vector = cv.fit_transform(movies['tags'].values.astype('U')).toarray()
+        similarity = cosine_similarity(vector)
+        pickle.dump(similarity, open("similarity.pkl", "wb"))
+    else:
+        similarity = pickle.load(open("similarity.pkl", "rb"))
+    
     return movies, similarity
-
-movies, similarity = load_model()
-movies_list = movies['title'].values
-
 
 # ============================================================
 # STEP 5: APP HEADER
