@@ -1,0 +1,8 @@
+# Large file - regenerate by running Main.py 
+similarity.pkl 
+__pycache__/ 
+*.py[cod] 
+.ipynb_checkpoints/ 
+.env 
+frontend/node_modules/ 
+frontend/public/build/ 
