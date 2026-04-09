@@ -154,7 +154,8 @@ def load_model():
         similarity = pickle.load(open("similarity.pkl", "rb"))
     
     return movies, similarity
-
+movies, similarity = load_model()
+movies_list = movies['title'].values
 # ============================================================
 # STEP 5: APP HEADER
 # ============================================================
