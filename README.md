@@ -4,9 +4,6 @@ A content-based movie recommendation system that suggests similar movies using M
 
 ---
 
-## 🚀 Live Demo
-
-[👉 Open the App on Streamlit](YOUR_STREAMLIT_LINK_HERE)
 
 ---
 
